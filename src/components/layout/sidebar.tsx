@@ -97,20 +97,15 @@ export function Sidebar() {
       `}>
         <div className="flex h-full flex-col">
           {/* Header */}
-          <div className="flex items-center gap-3 p-6 border-b border-border/50">
-            <div className="w-12 h-12 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-3 p-6 border-b border-border/50">
+            <div className="w-48 h-16 flex items-center justify-center">
               <img 
                 src={talkingTeddyLogo} 
                 alt="Talking Teddy Logo" 
-                className="w-12 h-12 object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
-            <div>
-              <h1 className="font-bold text-lg text-primary">
-                Talking Teddy
-              </h1>
-              <p className="text-xs text-muted-foreground">Admin Panel</p>
-            </div>
+            <p className="text-xs text-muted-foreground">Admin Panel</p>
           </div>
 
           {/* Navigation */}
