@@ -11,27 +11,52 @@ export function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const [isSignUp, setIsSignUp] = useState(false)
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
-
-      if (error) {
-        toast({
-          title: 'Login Failed',
-          description: error.message,
-          variant: 'destructive',
+      if (isSignUp) {
+        const redirectUrl = `${window.location.origin}/`
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: redirectUrl
+          }
         })
+
+        if (error) {
+          toast({
+            title: 'Sign Up Failed',
+            description: error.message,
+            variant: 'destructive',
+          })
+        } else {
+          toast({
+            title: 'Sign Up Successful',
+            description: 'Please check your email to confirm your account',
+          })
+        }
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        })
+
+        if (error) {
+          toast({
+            title: 'Login Failed',
+            description: error.message,
+            variant: 'destructive',
+          })
+        }
       }
     } catch (error) {
       toast({
-        title: 'Login Failed',
+        title: isSignUp ? 'Sign Up Failed' : 'Login Failed',
         description: 'An unexpected error occurred',
         variant: 'destructive',
       })
@@ -55,13 +80,16 @@ export function LoginForm() {
 
         <Card className="shadow-card-hover border-0 gradient-card">
           <CardHeader className="text-center">
-            <CardTitle>Welcome Back</CardTitle>
+            <CardTitle>{isSignUp ? 'Create Account' : 'Welcome Back'}</CardTitle>
             <CardDescription>
-              Sign in to manage your Talking Teddy system
+              {isSignUp 
+                ? 'Create your account to manage Talking Teddy' 
+                : 'Sign in to manage your Talking Teddy system'
+              }
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleLogin} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -90,9 +118,25 @@ export function LoginForm() {
                 className="w-full"
                 disabled={loading}
               >
-                {loading ? 'Signing in...' : 'Sign In'}
+                {loading 
+                  ? (isSignUp ? 'Creating Account...' : 'Signing in...') 
+                  : (isSignUp ? 'Create Account' : 'Sign In')
+                }
               </Button>
             </form>
+            
+            <div className="mt-4 text-center">
+              <button
+                type="button"
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {isSignUp 
+                  ? 'Already have an account? Sign in' 
+                  : "Don't have an account? Sign up"
+                }
+              </button>
+            </div>
           </CardContent>
         </Card>
       </div>
