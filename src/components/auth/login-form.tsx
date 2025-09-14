@@ -72,7 +72,7 @@ export function LoginForm() {
           <img 
             src={talkingTeddyLogo} 
             alt="Talking Teddy Logo" 
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain max-h-36"
           />
           <p className="text-muted-foreground mt-2">Admin Panel</p>
         </div>
