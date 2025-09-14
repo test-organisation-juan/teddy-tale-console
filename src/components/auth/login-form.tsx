@@ -69,13 +69,11 @@ export function LoginForm() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="mx-auto w-64 h-20 bg-card rounded-2xl flex items-center justify-center mb-4 p-4">
-            <img 
-              src={talkingTeddyLogo} 
-              alt="Talking Teddy Logo" 
-              className="w-full h-full object-contain"
-            />
-          </div>
+          <img 
+            src={talkingTeddyLogo} 
+            alt="Talking Teddy Logo" 
+            className="w-full h-full object-contain"
+          />
           <p className="text-muted-foreground mt-2">Admin Panel</p>
         </div>
 
