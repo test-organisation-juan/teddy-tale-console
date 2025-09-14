@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { 
-  Heart, 
   User, 
   BookOpen, 
   GraduationCap, 
@@ -17,6 +16,7 @@ import { Button } from '@/components/ui/button'
 import { supabase } from '@/lib/supabase'
 import { toast } from '@/hooks/use-toast'
 import { api } from '@/lib/api'
+import talkingTeddyLogo from '@/assets/talking-teddy-logo.png'
 
 const navigationItems = [
   { title: 'Kid Context', url: '/kid-context', icon: User },
@@ -96,8 +96,12 @@ export function Sidebar() {
         <div className="flex h-full flex-col">
           {/* Header */}
           <div className="flex items-center gap-3 p-6 border-b border-border/50">
-            <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-glow">
-              <Heart className="w-5 h-5 text-white" />
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src={talkingTeddyLogo} 
+                alt="Talking Teddy Logo" 
+                className="w-12 h-12 object-contain"
+              />
             </div>
             <div>
               <h1 className="font-bold text-lg gradient-primary bg-clip-text text-transparent">

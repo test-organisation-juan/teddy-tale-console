@@ -17,11 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 243 23% 13%;
 
-    --primary: 262 52% 47%;
+    --primary: 229 75% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 262 83% 60%;
+    --primary-glow: 229 75% 52%;
 
-    --secondary: 220 14% 96%;
+    --secondary: 47 87% 55%;
     --secondary-foreground: 243 23% 13%;
 
     --muted: 220 14% 96%;
@@ -35,19 +35,19 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 262 52% 47%;
+    --ring: 229 75% 42%;
 
     --radius: 0.75rem;
 
     /* Beautiful gradients for Talking Teddy */
-    --gradient-primary: linear-gradient(135deg, hsl(262 52% 47%), hsl(214 100% 50%));
-    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 60%), hsl(214 100% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(229 75% 42%), hsl(229 75% 52%));
+    --gradient-secondary: linear-gradient(135deg, hsl(47 87% 55%), hsl(47 87% 65%));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 14% 98%));
     
     /* Elegant shadows */
-    --shadow-card: 0 1px 3px 0 hsl(262 52% 47% / 0.1), 0 1px 2px 0 hsl(262 52% 47% / 0.06);
-    --shadow-card-hover: 0 10px 25px -3px hsl(262 52% 47% / 0.1), 0 4px 6px -2px hsl(262 52% 47% / 0.05);
-    --shadow-glow: 0 0 40px hsl(262 83% 60% / 0.3);
+    --shadow-card: 0 1px 3px 0 hsl(229 75% 42% / 0.1), 0 1px 2px 0 hsl(229 75% 42% / 0.06);
+    --shadow-card-hover: 0 10px 25px -3px hsl(229 75% 42% / 0.1), 0 4px 6px -2px hsl(229 75% 42% / 0.05);
+    --shadow-glow: 0 0 40px hsl(229 75% 52% / 0.3);
 
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,12 +79,12 @@ All colors MUST be HSL.
     --popover: 243 23% 11%;
     --popover-foreground: 249 50% 98%;
 
-    --primary: 262 83% 60%;
-    --primary-foreground: 243 23% 9%;
-    --primary-glow: 262 83% 70%;
+    --primary: 229 75% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 229 75% 62%;
 
-    --secondary: 243 23% 15%;
-    --secondary-foreground: 249 50% 98%;
+    --secondary: 47 87% 45%;
+    --secondary-foreground: 243 23% 9%;
 
     --muted: 243 23% 15%;
     --muted-foreground: 243 13% 70%;
@@ -97,17 +97,17 @@ All colors MUST be HSL.
 
     --border: 243 23% 18%;
     --input: 243 23% 18%;
-    --ring: 262 83% 60%;
+    --ring: 229 75% 52%;
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 60%), hsl(214 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 70%), hsl(214 100% 70%));
+    --gradient-primary: linear-gradient(135deg, hsl(229 75% 52%), hsl(229 75% 62%));
+    --gradient-secondary: linear-gradient(135deg, hsl(47 87% 45%), hsl(47 87% 55%));
     --gradient-card: linear-gradient(135deg, hsl(243 23% 11%), hsl(243 23% 13%));
     
     /* Dark shadows */
     --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 1px 2px 0 hsl(0 0% 0% / 0.2);
     --shadow-card-hover: 0 10px 25px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
-    --shadow-glow: 0 0 40px hsl(262 83% 60% / 0.4);
+    --shadow-glow: 0 0 40px hsl(229 75% 52% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
