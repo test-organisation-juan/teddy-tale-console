@@ -90,8 +90,8 @@ export function Sidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed inset-y-0 left-0 z-40 w-64 gradient-card border-r border-border/50 
-        transform transition-transform duration-300 ease-in-out
+        fixed inset-y-0 left-0 z-40 w-64 gradient-sidebar border-r border-border/50 shadow-elegant
+        transform transition-all duration-300 ease-in-out
         ${collapsed ? '-translate-x-full md:translate-x-0' : 'translate-x-0'}
         md:relative md:translate-x-0
       `}>
@@ -117,10 +117,10 @@ export function Sidebar() {
                   key={item.title}
                   to={item.url}
                   className={`
-                    flex items-center gap-3 px-4 py-3 rounded-lg transition-smooth
+                    flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300
                     ${isActive 
-                      ? 'gradient-primary text-white shadow-glow' 
-                      : 'hover:bg-muted/50 text-foreground'
+                      ? 'gradient-primary text-white shadow-glow hover:scale-105' 
+                      : 'hover:bg-muted/80 text-foreground hover:scale-105 hover:shadow-card'
                     }
                   `}
                 >

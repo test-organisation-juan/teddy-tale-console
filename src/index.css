@@ -8,46 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 249 50% 98%;
-    --foreground: 243 23% 13%;
+    /* Light mode - magical purple theme */
+    --background: 270 20% 98%;
+    --foreground: 262 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 243 23% 13%;
+    --card-foreground: 262 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 243 23% 13%;
+    --popover-foreground: 262 25% 15%;
 
-    --primary: 229 75% 42%;
+    /* Primary brand colors - magical purple theme */
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 229 75% 52%;
+    --primary-glow: 270 100% 80%;
 
-    --secondary: 47 87% 55%;
-    --secondary-foreground: 243 23% 13%;
+    /* Secondary colors - soft and welcoming */
+    --secondary: 270 20% 96%;
+    --secondary-foreground: 262 25% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 270 15% 95%;
+    --muted-foreground: 262 10% 50%;
 
-    --accent: 214 100% 97%;
-    --accent-foreground: 243 23% 13%;
+    /* Accent colors - playful highlights */
+    --accent: 315 100% 78%;
+    --accent-foreground: 262 25% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 229 75% 42%;
+    --border: 270 15% 90%;
+    --input: 270 15% 90%;
+    --ring: 262 83% 58%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Beautiful gradients for Talking Teddy */
-    --gradient-primary: linear-gradient(135deg, hsl(229 75% 42%), hsl(229 75% 52%));
-    --gradient-secondary: linear-gradient(135deg, hsl(47 87% 55%), hsl(47 87% 65%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    /* Beautiful gradients for cards and sections */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(270 100% 80%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 20% 96%), hsl(260 15% 92%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(270 20% 98%));
+    --gradient-sidebar: linear-gradient(180deg, hsl(270 20% 96%), hsl(260 15% 92%));
     
-    /* Elegant shadows */
-    --shadow-card: 0 1px 3px 0 hsl(229 75% 42% / 0.1), 0 1px 2px 0 hsl(229 75% 42% / 0.06);
-    --shadow-card-hover: 0 10px 25px -3px hsl(229 75% 42% / 0.1), 0 4px 6px -2px hsl(229 75% 42% / 0.05);
-    --shadow-glow: 0 0 40px hsl(229 75% 52% / 0.3);
+    /* Elegant shadows with magical tones */
+    --shadow-card: 0 4px 20px -4px hsl(262 83% 58% / 0.1);
+    --shadow-card-hover: 0 8px 30px -4px hsl(262 83% 58% / 0.2);
+    --shadow-glow: 0 0 40px hsl(270 100% 80% / 0.4);
+    --shadow-elegant: 0 10px 30px -10px hsl(262 83% 58% / 0.3);
 
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,44 +76,50 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 243 23% 9%;
-    --foreground: 249 50% 98%;
+    /* Dark mode - magical nighttime theme */
+    --background: 262 25% 8%;
+    --foreground: 270 20% 96%;
 
-    --card: 243 23% 11%;
-    --card-foreground: 249 50% 98%;
+    --card: 262 25% 10%;
+    --card-foreground: 270 20% 96%;
 
-    --popover: 243 23% 11%;
-    --popover-foreground: 249 50% 98%;
+    --popover: 262 25% 10%;
+    --popover-foreground: 270 20% 96%;
 
-    --primary: 229 75% 52%;
+    /* Adjust primary for dark mode - slightly more vibrant */
+    --primary: 270 100% 70%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 229 75% 62%;
+    --primary-glow: 280 100% 85%;
 
-    --secondary: 47 87% 45%;
-    --secondary-foreground: 243 23% 9%;
+    /* Dark mode secondary */
+    --secondary: 262 15% 15%;
+    --secondary-foreground: 270 20% 96%;
 
-    --muted: 243 23% 15%;
-    --muted-foreground: 243 13% 70%;
+    --muted: 262 15% 15%;
+    --muted-foreground: 262 10% 65%;
 
-    --accent: 243 23% 15%;
-    --accent-foreground: 249 50% 98%;
+    /* Dark mode accent */
+    --accent: 315 100% 75%;
+    --accent-foreground: 262 25% 15%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 249 50% 98%;
+    --destructive-foreground: 270 20% 96%;
 
-    --border: 243 23% 18%;
-    --input: 243 23% 18%;
-    --ring: 229 75% 52%;
+    --border: 262 15% 15%;
+    --input: 262 15% 15%;
+    --ring: 270 100% 70%;
 
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(229 75% 52%), hsl(229 75% 62%));
-    --gradient-secondary: linear-gradient(135deg, hsl(47 87% 45%), hsl(47 87% 55%));
-    --gradient-card: linear-gradient(135deg, hsl(243 23% 11%), hsl(243 23% 13%));
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 70%), hsl(280 100% 85%));
+    --gradient-secondary: linear-gradient(135deg, hsl(262 15% 15%), hsl(260 20% 18%));
+    --gradient-card: linear-gradient(145deg, hsl(262 25% 8%), hsl(262 15% 15%));
+    --gradient-sidebar: linear-gradient(180deg, hsl(262 15% 15%), hsl(260 20% 18%));
     
-    /* Dark shadows */
-    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 1px 2px 0 hsl(0 0% 0% / 0.2);
-    --shadow-card-hover: 0 10px 25px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
-    --shadow-glow: 0 0 40px hsl(229 75% 52% / 0.4);
+    /* Dark shadows with purple glow */
+    --shadow-card: 0 4px 20px -4px hsl(270 100% 70% / 0.2);
+    --shadow-card-hover: 0 8px 30px -4px hsl(270 100% 70% / 0.3);
+    --shadow-glow: 0 0 40px hsl(280 100% 85% / 0.4);
+    --shadow-elegant: 0 10px 30px -10px hsl(270 100% 70% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -142,6 +154,10 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  .gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+  
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -154,7 +170,39 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow);
   }
   
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
   }
+
+  /* Enhanced animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }

@@ -18,8 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-card hover:shadow-card-hover",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        gradient: "gradient-primary text-white hover:opacity-90 shadow-card hover:shadow-glow",
-        hero: "gradient-primary text-white hover:opacity-90 shadow-glow text-base font-semibold px-8 py-4",
+        gradient: "gradient-primary text-white hover:opacity-90 shadow-card hover:shadow-glow transition-all duration-300",
+        hero: "gradient-primary text-white hover:opacity-90 shadow-glow text-base font-semibold px-8 py-4 hover:scale-105 transition-all duration-300",
+        magical: "bg-gradient-to-r from-primary via-accent to-primary bg-size-200 animate-pulse text-white hover:animate-none hover:bg-left transition-all duration-500 shadow-glow",
       },
       size: {
         default: "h-10 px-4 py-2",
