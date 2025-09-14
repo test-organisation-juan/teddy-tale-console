@@ -11,6 +11,7 @@ class ApiClient {
     return {
       'Authorization': `Bearer ${session.access_token}`,
       'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': 'true'
     }
   }
 
@@ -122,6 +123,13 @@ class ApiClient {
   async deleteGame(gameId: string) {
     return this.request(`/games/${gameId}`, {
       method: 'DELETE',
+    })
+  }
+
+  async search(query: string) {
+    return this.request(`/search`, {
+      method: 'POST',
+      body: JSON.stringify({ query }),
     })
   }
 }

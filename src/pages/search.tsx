@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from '@/hooks/use-toast'
+import { api } from '@/lib/api'
 
 export default function Search() {
   const [query, setQuery] = useState('')
@@ -26,15 +27,11 @@ export default function Search() {
     setIsLoading(true)
     
     try {
-      const { data, error } = await supabase.functions.invoke('search', {
-        body: { query: query.trim() }
-      })
+      const response = await api.search(query.trim())
+      console.log(response)
+      const results = response.results
 
-      if (error) {
-        throw error
-      }
-
-      setResults(data?.results || [])
+      setResults(results)
     } catch (error) {
       console.error('Search error:', error)
       toast({

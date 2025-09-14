@@ -19,6 +19,7 @@ export default function KidContext() {
 
   useEffect(() => {
     loadUserData()
+    console.log(userData)
   }, [])
 
   const loadUserData = async () => {
