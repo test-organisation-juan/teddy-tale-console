@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { 
   Heart, 
@@ -9,11 +9,14 @@ import {
   Settings,
   LogOut,
   Menu,
-  X
+  X,
+  Baby,
+  MessageSquare
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { supabase } from '@/lib/supabase'
 import { toast } from '@/hooks/use-toast'
+import { api } from '@/lib/api'
 
 const navigationItems = [
   { title: 'Kid Context', url: '/kid-context', icon: User },
@@ -26,6 +29,31 @@ const navigationItems = [
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
   const location = useLocation()
+  const [kidData, setKidData] = useState({
+    kid_name: '',
+    kid_age: '',
+    user_prompt: ''
+  })
+
+  useEffect(() => {
+    loadKidData()
+  }, [])
+
+  const loadKidData = async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (session?.user?.id) {
+        const data = await api.getUserData(session.user.id)
+        setKidData({
+          kid_name: data.kid_name || '',
+          kid_age: data.kid_age || '',
+          user_prompt: data.user_prompt || ''
+        })
+      }
+    } catch (error) {
+      console.error('Error loading kid data:', error)
+    }
+  }
 
   const handleLogout = async () => {
     try {
@@ -101,6 +129,43 @@ export function Sidebar() {
               )
             })}
           </nav>
+
+          {/* Kid Information */}
+          {(kidData.kid_name || kidData.kid_age || kidData.user_prompt) && (
+            <div className="p-4 border-t border-border/50 space-y-3">
+              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                Kid Profile
+              </div>
+              
+              {kidData.kid_name && (
+                <div className="flex items-center gap-2 text-sm">
+                  <User className="w-4 h-4 text-primary" />
+                  <span className="font-medium">Name:</span>
+                  <span className="text-muted-foreground">{kidData.kid_name}</span>
+                </div>
+              )}
+              
+              {kidData.kid_age && (
+                <div className="flex items-center gap-2 text-sm">
+                  <Baby className="w-4 h-4 text-primary" />
+                  <span className="font-medium">Age:</span>
+                  <span className="text-muted-foreground">{kidData.kid_age}</span>
+                </div>
+              )}
+              
+              {kidData.user_prompt && (
+                <div className="flex items-start gap-2 text-sm">
+                  <MessageSquare className="w-4 h-4 text-primary mt-0.5" />
+                  <div className="flex-1">
+                    <span className="font-medium">Prompt:</span>
+                    <p className="text-muted-foreground text-xs mt-1 line-clamp-2">
+                      {kidData.user_prompt}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Logout button */}
           <div className="p-4 border-t border-border/50">
