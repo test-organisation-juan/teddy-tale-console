@@ -98,7 +98,7 @@ export default function KidContext() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold text-primary">
           Kid Context Management
         </h1>
         <p className="text-muted-foreground mt-2">

@@ -47,7 +47,7 @@ export default function Search() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight gradient-primary bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-primary">
           Search
         </h1>
         <p className="text-muted-foreground">

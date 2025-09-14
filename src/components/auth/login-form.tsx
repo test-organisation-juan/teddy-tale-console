@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { toast } from '@/hooks/use-toast'
-import { Heart } from 'lucide-react'
+import talkingTeddyLogo from '@/assets/talking-teddy-logo.png'
 
 export function LoginForm() {
   const [email, setEmail] = useState('')
@@ -69,10 +69,14 @@ export function LoginForm() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-4 shadow-glow">
-            <Heart className="w-8 h-8 text-white" />
+          <div className="mx-auto w-16 h-16 bg-card rounded-2xl flex items-center justify-center mb-4 shadow-card">
+            <img 
+              src={talkingTeddyLogo} 
+              alt="Talking Teddy Logo" 
+              className="w-12 h-12 object-contain"
+            />
           </div>
-          <h1 className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold text-primary">
             Talking Teddy
           </h1>
           <p className="text-muted-foreground mt-2">Admin Panel</p>

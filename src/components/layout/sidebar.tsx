@@ -106,7 +106,7 @@ export function Sidebar() {
               />
             </div>
             <div>
-              <h1 className="font-bold text-lg gradient-primary bg-clip-text text-transparent">
+              <h1 className="font-bold text-lg text-primary">
                 Talking Teddy
               </h1>
               <p className="text-xs text-muted-foreground">Admin Panel</p>

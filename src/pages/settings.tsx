@@ -73,7 +73,7 @@ export default function Settings() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold text-primary">
           Settings
         </h1>
         <p className="text-muted-foreground mt-2">
