@@ -9,6 +9,7 @@ import KidContext from "./pages/kid-context";
 import Stories from "./pages/stories";
 import Courses from "./pages/courses";
 import Games from "./pages/games";
+import Search from "./pages/search";
 import Settings from "./pages/settings";
 import NotFound from "./pages/NotFound";
 
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/stories" element={<Stories />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/games" element={<Games />} />
+              <Route path="/search" element={<Search />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

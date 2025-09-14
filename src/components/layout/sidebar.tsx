@@ -10,7 +10,8 @@ import {
   Menu,
   X,
   Baby,
-  MessageSquare
+  MessageSquare,
+  Search
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { supabase } from '@/lib/supabase'
@@ -23,6 +24,7 @@ const navigationItems = [
   { title: 'Stories', url: '/stories', icon: BookOpen },
   { title: 'Courses', url: '/courses', icon: GraduationCap },
   { title: 'Games', url: '/games', icon: Gamepad2 },
+  { title: 'Search', url: '/search', icon: Search },
   { title: 'Settings', url: '/settings', icon: Settings },
 ]
 
