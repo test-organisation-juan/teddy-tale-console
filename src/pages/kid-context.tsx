@@ -126,7 +126,7 @@ export default function KidContext() {
                 id="kid_name"
                 value={userData.kid_name}
                 onChange={(e) => setUserData({ ...userData, kid_name: e.target.value })}
-                placeholder="Enter kid's name"
+                placeholder={userData.kid_name || "Enter kid's name"}
               />
             </div>
             <Button
@@ -161,7 +161,7 @@ export default function KidContext() {
                 id="kid_age"
                 value={userData.kid_age}
                 onChange={(e) => setUserData({ ...userData, kid_age: e.target.value })}
-                placeholder="Enter kid's age"
+                placeholder={userData.kid_age || "Enter kid's age"}
               />
             </div>
             <Button
@@ -196,7 +196,7 @@ export default function KidContext() {
                 id="user_prompt"
                 value={userData.user_prompt}
                 onChange={(e) => setUserData({ ...userData, user_prompt: e.target.value })}
-                placeholder="Enter custom system prompt..."
+                placeholder={userData.user_prompt || "Enter custom system prompt..."}
                 rows={4}
               />
             </div>
