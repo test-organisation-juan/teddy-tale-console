@@ -3,7 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { AuthGuard } from "@/components/ui/auth-guard";
+import { MainLayout } from "@/components/layout/main-layout";
+import KidContext from "./pages/kid-context";
+import Stories from "./pages/stories";
+import Courses from "./pages/courses";
+import Games from "./pages/games";
+import Settings from "./pages/settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -14,11 +20,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthGuard>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<KidContext />} />
+              <Route path="/kid-context" element={<KidContext />} />
+              <Route path="/stories" element={<Stories />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/games" element={<Games />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </MainLayout>
+        </AuthGuard>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
